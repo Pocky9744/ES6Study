@@ -247,4 +247,25 @@ class MyArray extends Array{
 }
 ```
 - Object.setPrototypeOf(super,sub): sub._ _proto_ _에 super 오브젝트의 프로퍼티가 첨부됨
-## Image 오브젝트 
+## Image 오브젝트 상속
+- DOM에서 제공하는 Image, Audio등의 인터페이스 등을 상속받을 수 있다.
+```
+class ExtendsImage extends Image{
+  constructor(){
+    super();
+  }
+  setProperty(image){
+    this.src = image.src;
+    this.alt = image.alt;
+    this.title = image.title;
+  }
+};
+let imageObj = new ExtendsImage(0;
+let properties = {
+  src: "file/rainbox.png"
+  alt: "나무와 집이 있고 그 위에 무지개가 있는 모습",
+  title: "무지개"
+};
+imageObj.setProperty(properties);
+document.querySelector("body").appendChild(imageObj); // body의 자식으로 img를 첨부함
+```
